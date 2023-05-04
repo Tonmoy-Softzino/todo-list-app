@@ -10,14 +10,14 @@ defineProps({
 
 <template>
   <section>
-    <h3>{{ title }}</h3>
+    <h4>{{ title }}</h4>
     <p v-show="!tasks.length">No tasks to show</p>
     <div>
       <ul>
         <List
           v-for="task in tasks"
+          :task= "task"
           :key="task.id"
-          :task="task"
           :title="title"
         />
       </ul>
@@ -37,9 +37,6 @@ defineProps({
     text-align: center;
   }
   ul{
-    list-style-type: none;
-    display: flex;
-    float: left;
+    margin-top: 0.5rem;
   }
 </style>
-bg-cyan-500 shadow-lg shadow-cyan-500/50 p-3 rounded-lg

@@ -1,9 +1,22 @@
 <script setup>
 import TaskAddForm from "./taskAddForm.vue";
-import { ref, computed } from "vue";
+import { ref, computed, watch, watchEffect } from "vue";
 import TodoLists from "./todoLists.vue";
+import util from './utill'
 
 const toDos = ref([]);
+
+const { saveDataToLocal, set } = util;
+
+watchEffect(() => {
+  if (sessionStorage.getItem("tasks")) {
+    toDos.value = [...JSON.parse(sessionStorage.getItem("tasks"))];
+  } else {
+    saveDataToLocal(toDos.value);
+  }
+});
+
+watch(toDos,(newVal)=>{saveDataToLocal(newVal)},{deep:true})
 
 const completed = computed(() => {
   return toDos.value.filter((todo) => todo.completed && !todo.deleted);
@@ -19,7 +32,7 @@ const deletedTasks = computed(() => {
 
 const taskAddByEmit = (name) => {
   toDos.value.push({
-    id: Date.now,
+    id: toDos.value.length + 1,
     label: name,
     completed: false,
     deleted: false

@@ -15,7 +15,7 @@ const deleteTask = () => {
     <label>
       <div>
         <input
-          v-show="!task.deleted"
+          v-show="!task.deleted "
           type="checkbox"
           v-model="task.completed"
         />
