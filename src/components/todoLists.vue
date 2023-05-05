@@ -27,7 +27,8 @@ defineProps({
 
 <style scoped>
   section{
-    width: 100%;;
+    min-width: 23rem;
+    min-height: 20rem;
     border: 1px solid black;
     background: rgb(215, 199, 199);
     padding: .8rem;
