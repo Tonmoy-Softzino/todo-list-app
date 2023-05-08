@@ -1,6 +1,6 @@
 <script setup>
 import { defineProps } from "vue";
-import List from "./list.vue";
+import List from "./ListTemplate.vue";
 
 defineProps({
   tasks: Array,
@@ -16,7 +16,7 @@ defineProps({
       <ul>
         <List
           v-for="task in tasks"
-          :task= "task"
+          :task="task"
           :key="task.id"
           :title="title"
         />
@@ -26,18 +26,18 @@ defineProps({
 </template>
 
 <style scoped>
-  section{
-    min-width: 23rem;
-    min-height: 20rem;
-    border: 1px solid black;
-    background: rgb(215, 199, 199);
-    padding: .8rem;
-    /* padding-left: .2rem; */
-  }
-  h2{
-    text-align: center;
-  }
-  ul{
-    margin-top: 0.5rem;
-  }
+section {
+  min-width: 23rem;
+  min-height: 20rem;
+  border: 1px solid black;
+  background: rgb(215, 199, 199);
+  padding: 0.8rem;
+  /* padding-left: .2rem; */
+}
+h2 {
+  text-align: center;
+}
+ul {
+  margin-top: 0.5rem;
+}
 </style>
