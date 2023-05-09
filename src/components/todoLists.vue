@@ -17,6 +17,7 @@ defineProps({
         <List
           v-for="task in tasks"
           :task="task"
+          :label="task.label"
           :key="task.id"
           :title="title"
         />

@@ -1,6 +1,6 @@
 <script setup>
-    import MainComp from './components/mainComp.vue';
-import TaskAddForm from './components/taskAddForm.vue'
+    import MainComp from './components/HomePage.vue';
+// import ListAddForm from './components/ListAddForm.vue'
 
     const addtask = (name) => {
     toDos.value.push({

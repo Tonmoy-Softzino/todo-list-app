@@ -10,6 +10,10 @@ const props = defineProps({
 const deleteTask = () => {
   props.task.deleted = true;
 };
+
+const updateTask = (task) => {
+  console.log('require to change the task');
+}
 </script>
 
 <!-- Script End here and HTML start -->
@@ -29,6 +33,9 @@ const deleteTask = () => {
         <button v-show="!task.deleted" type="button" @click="deleteTask">
           Delete
         </button>
+        <button v-show="!task.deleted" type="button" @click="updateTask(task.label)">
+          Update
+        </button>
       </div>
     </label>
   </li>
@@ -45,5 +52,9 @@ li label {
 }
 li {
   display: flex;
+}
+
+button:hover{
+  cursor: pointer;
 }
 </style>

@@ -1,5 +1,5 @@
 <script setup>
-import TaskAddForm from "./taskAddForm.vue";
+import TaskAddForm from "./ListAddForm.vue";
 import { ref, computed, watch, watchEffect } from "vue";
 import TodoLists from "./todoLists.vue";
 import util from './utill'
@@ -35,7 +35,8 @@ const taskAddByEmit = (name) => {
     id: toDos.value.length + 1,
     label: name,
     completed: false,
-    deleted: false
+    deleted: false,
+    updated: false
   });
 };
 </script>
