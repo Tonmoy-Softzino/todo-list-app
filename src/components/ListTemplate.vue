@@ -1,5 +1,5 @@
 <script setup>
-import { defineProps } from "vue";
+// import { defineProps } from "vue";
 
 // props are coming from the parent todoList.vue
 const props = defineProps({

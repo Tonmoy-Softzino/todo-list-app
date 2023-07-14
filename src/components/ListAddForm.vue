@@ -1,6 +1,6 @@
 
-<script setup>
-import { ref, defineEmits } from "vue";
+<script setup lang="ts">
+import { ref } from "vue";
 
 const emit = defineEmits(["addTask"]);
 let newTask = ref("");
@@ -37,6 +37,7 @@ const addTask = () => {
 
     button{
         padding: .5rem;
+        cursor: pointer;
         margin-left: .2rem;
         background: white;
         border-left-width: 4px;
